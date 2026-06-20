@@ -128,3 +128,92 @@
     @apply font-sans;
   }
 }
+
+/* ============================================
+   CUSTOM POLISH — Research Hub
+   ============================================ */
+
+/* Smooth transitions jab dark/light mode switch ho */
+* {
+  transition-property: background-color, border-color, color;
+  transition-duration: 200ms;
+  transition-timing-function: ease;
+}
+
+/* Body ko thora soft background dena (light mode) */
+body {
+  background-color: var(--background);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Link card hover par halka sa upar uthe (lift effect) */
+.link-card-hover {
+  transition:
+    transform 150ms ease,
+    box-shadow 150ms ease,
+    border-color 150ms ease;
+}
+.link-card-hover:hover {
+  transform: translateY(-2px);
+}
+
+/* Skeleton ko pulse + subtle shimmer dena */
+@keyframes skeleton-pulse {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+[data-slot="skeleton"] {
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+/* Page content fade-in jab load ho */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fade-in 400ms ease-out;
+}
+
+/* Filter tabs ka smooth scale on click */
+.filter-tab {
+  transition: all 150ms ease;
+}
+.filter-tab:active {
+  transform: scale(0.96);
+}
+
+/* Scrollbar ko thora subtle banana */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}
+
+/* Avatar circle ko halka gradient dena */
+.avatar-circle {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary) 100%);
+  opacity: 0.08;
+}
