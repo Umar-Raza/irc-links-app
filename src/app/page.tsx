@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { SiteHeader } from "@/components/site-header";
 import { CategoryFilter } from "@/components/category-filter";
+import { SearchBar } from "@/components/search-bar";
 import { LinkCard } from "@/components/link-card";
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -20,6 +21,7 @@ export default function Home() {
   const [links, setLinks] = useState<LinkItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState("all");
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     async function fetchLinks() {
@@ -37,25 +39,25 @@ export default function Home() {
     fetchLinks();
   }, []);
 
-  const filteredLinks =
-    filter === "all" ? links : links.filter((l) => l.category === filter);
+  const filteredLinks = links
+    .filter((l) => (filter === "all" ? true : l.category === filter))
+    .filter((l) => {
+      if (!search.trim()) return true;
+      const q = search.toLowerCase();
+      return (
+        l.title.toLowerCase().includes(q) ||
+        (l.description?.toLowerCase().includes(q) ?? false)
+      );
+    });
 
-  filteredLinks.map((link, index) => (
-    <div
-      key={link.id}
-      className="fade-in"
-      style={{
-        animationDelay: `${index * 50}ms`,
-        animationFillMode: "backwards",
-      }}
-    >
-      <LinkCard link={link} />
-    </div>
-  ));
   return (
     <main className="min-h-screen px-4 py-8 md:py-12">
       <div className="max-w-xl mx-auto">
         <SiteHeader />
+
+        <div className="mb-4">
+          <SearchBar value={search} onChange={setSearch} />
+        </div>
 
         <div className="mb-6">
           <CategoryFilter active={filter} onChange={setFilter} />
@@ -71,7 +73,18 @@ export default function Home() {
               Koi link nahi mila.
             </p>
           ) : (
-            filteredLinks.map((link) => <LinkCard key={link.id} link={link} />)
+            filteredLinks.map((link, index) => (
+              <div
+                key={link.id}
+                className="fade-in"
+                style={{
+                  animationDelay: `${index * 50}ms`,
+                  animationFillMode: "backwards",
+                }}
+              >
+                <LinkCard link={link} />
+              </div>
+            ))
           )}
         </div>
       </div>

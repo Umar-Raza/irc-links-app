@@ -6,6 +6,7 @@ const categories = [
   { value: "all", label: "All" },
   { value: "whatsapp", label: "WhatsApp" },
   { value: "website", label: "Websites" },
+  { value: "feedback", label: "Feedback" },
 ];
 
 export function CategoryFilter({

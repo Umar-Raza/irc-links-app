@@ -4,7 +4,12 @@
 import { getIconForCategory } from "@/lib/link-icons";
 import { trackClickAndRedirect } from "@/app/actions";
 import { Badge } from "@/components/ui/badge";
-import { ChevronRight, Globe, MessageCircle } from "lucide-react";
+import {
+  ChevronRight,
+  Globe,
+  MessageCircle,
+  MessageSquareHeart,
+} from "lucide-react";
 
 type LinkItem = {
   id: string;
@@ -16,7 +21,12 @@ type LinkItem = {
 };
 
 export function LinkCard({ link }: { link: LinkItem }) {
-  const Icon = link.category === "whatsapp" ? MessageCircle : Globe;
+  const Icon =
+    link.category === "whatsapp"
+      ? MessageCircle
+      : link.category === "feedback"
+        ? MessageSquareHeart
+        : Globe;
 
   const handleClick = () => {
     trackClickAndRedirect(link.id, link.url);
