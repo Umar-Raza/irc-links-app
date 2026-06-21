@@ -1,7 +1,7 @@
 "use client";
 
 // import { ChevronRight } from "lucide-react";
-import { getIconForCategory } from "@/lib/link-icons";
+// import { getIconForCategory } from "@/lib/link-icons";
 import { trackClickAndRedirect } from "@/app/actions";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -44,7 +44,8 @@ export function LinkCard({ link }: { link: LinkItem }) {
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2">
           <h3 className="font-medium text-sm truncate">{link.title}</h3>
-          {link.status === "full" && (
+
+          {link.category === "whatsapp" && link.status === "full" && (
             <Badge variant="secondary" className="text-xs shrink-0">
               Full
             </Badge>

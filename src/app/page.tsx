@@ -36,7 +36,17 @@ export default function Home() {
       }
       setLoading(false);
     }
+
+    async function recordVisit() {
+      const supabase = createClient();
+      await supabase.from("page_visits").insert({
+        referrer: document.referrer || null,
+        user_agent: navigator.userAgent,
+      });
+    }
+
     fetchLinks();
+    recordVisit();
   }, []);
 
   const filteredLinks = links

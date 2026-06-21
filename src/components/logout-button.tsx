@@ -5,7 +5,15 @@ import { createClient } from "@/lib/supabase/client";
 import { Button } from "@/components/ui/button";
 import { LogOut } from "lucide-react";
 
-export function LogoutButton() {
+type ButtonVariant =
+  | "default"
+  | "destructive"
+  | "outline"
+  | "secondary"
+  | "ghost"
+  | "link";
+
+export function LogoutButton({ variant = "outline" }: { variant?: ButtonVariant }) {
   const router = useRouter();
 
   const handleLogout = async () => {
@@ -16,7 +24,7 @@ export function LogoutButton() {
   };
 
   return (
-    <Button variant="outline" size="sm" onClick={handleLogout}>
+    <Button variant={variant} size="sm" onClick={handleLogout}>
       <LogOut className="mr-2 h-4 w-4" />
       Logout
     </Button>
