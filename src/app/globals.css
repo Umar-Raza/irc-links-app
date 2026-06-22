@@ -8,7 +8,8 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
-  --font-mono: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
+  --font-mono:
+    ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
   --font-heading: var(--font-sans);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -18,11 +19,6 @@
   --color-sidebar-primary: var(--sidebar-primary);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -48,116 +44,145 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+/* =============================================
+   LIGHT MODE — Pink Brand Theme
+   ============================================= */
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  /* Font */
+  --font-sans: Inter, system-ui, -apple-system, sans-serif;
+
+  /* Brand Pink as Primary */
+  --primary: hsl(342, 60%, 50%);
+  --primary-foreground: hsl(0, 0%, 100%);
+
+  /* Backgrounds */
+  --background: hsl(0, 0%, 98%);
+  --foreground: hsl(300, 1%, 14%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(300, 1%, 14%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(300, 1%, 14%);
+
+  /* Secondary / Muted */
+  --secondary: hsl(344, 100%, 96%);
+  --secondary-foreground: hsl(338, 84%, 37%);
+  --muted: hsl(344, 60%, 96%);
+  --muted-foreground: hsl(0, 0%, 42%);
+
+  /* Accent */
+  --accent: hsl(344, 100%, 96%);
+  --accent-foreground: hsl(338, 84%, 37%);
+
+  /* Destructive */
+  --destructive: hsl(0, 84%, 60%);
+
+  /* Border / Input / Ring */
+  --border: hsl(0, 0%, 86%);
+  --input: hsl(0, 0%, 86%);
+  --ring: hsl(342, 60%, 50%);
+
+  /* Radius */
+  --radius: 0.75rem;
+
+  /* Sidebar */
+  --sidebar: hsl(0, 0%, 98%);
+  --sidebar-foreground: hsl(300, 1%, 14%);
+  --sidebar-primary: hsl(342, 60%, 50%);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: hsl(344, 100%, 96%);
+  --sidebar-accent-foreground: hsl(338, 84%, 37%);
+  --sidebar-border: hsl(0, 0%, 86%);
+  --sidebar-ring: hsl(342, 60%, 50%);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(177, 14, 76, 0.05);
+  --shadow-md:
+    0 4px 6px -1px rgba(177, 14, 76, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+  --shadow-lg:
+    0 10px 15px -3px rgba(177, 14, 76, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-brand: 0 0 24px rgba(177, 14, 76, 0.18);
 }
 
+/* =============================================
+   DARK MODE — Pink Brand Theme
+   ============================================= */
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --primary: hsl(342, 60%, 65%);
+  --primary-foreground: hsl(240, 6%, 10%);
+
+  --background: hsl(300, 4%, 7%);
+  --foreground: hsl(0, 4%, 95%);
+  --card: hsl(300, 2%, 12%);
+  --card-foreground: hsl(0, 4%, 95%);
+  --popover: hsl(300, 2%, 12%);
+  --popover-foreground: hsl(0, 4%, 95%);
+
+  --secondary: hsl(336, 30%, 18%);
+  --secondary-foreground: hsl(343, 80%, 73%);
+  --muted: hsl(300, 4%, 16%);
+  --muted-foreground: hsl(0, 1%, 62%);
+
+  --accent: hsl(336, 30%, 18%);
+  --accent-foreground: hsl(343, 80%, 73%);
+
+  --destructive: hsl(0, 72%, 60%);
+
+  --border: hsl(0, 0%, 22%);
+  --input: hsl(0, 0%, 18%);
+  --ring: hsl(342, 60%, 65%);
+
+  --sidebar: hsl(300, 2%, 12%);
+  --sidebar-foreground: hsl(0, 4%, 95%);
+  --sidebar-primary: hsl(342, 60%, 65%);
+  --sidebar-primary-foreground: hsl(240, 6%, 10%);
+  --sidebar-accent: hsl(336, 30%, 18%);
+  --sidebar-accent-foreground: hsl(343, 80%, 73%);
+  --sidebar-border: hsl(0, 0%, 22%);
+  --sidebar-ring: hsl(342, 60%, 65%);
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+  --shadow-brand: 0 0 24px rgba(204, 51, 97, 0.25);
 }
 
+/* =============================================
+   BASE STYLES
+   ============================================= */
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    transition-property: background-color, border-color, color, box-shadow;
+    transition-duration: 200ms;
+    transition-timing-function: ease;
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
   }
   html {
     @apply font-sans;
   }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  a {
+    color: var(--primary);
+  }
 }
 
-/* ============================================
-   CUSTOM POLISH — Research Hub
-   ============================================ */
+/* =============================================
+   POLISH — Animations, Scrollbar, Shadows
+   ============================================= */
 
-/* Smooth transitions jab dark/light mode switch ho */
-* {
-  transition-property: background-color, border-color, color;
-  transition-duration: 200ms;
-  transition-timing-function: ease;
-}
-
-/* Body ko thora soft background dena (light mode) */
-body {
-  background-color: var(--background);
-  -webkit-font-smoothing: antialiased;
-}
-
-/* Link card hover par halka sa upar uthe (lift effect) */
-.link-card-hover {
-  transition:
-    transform 150ms ease,
-    box-shadow 150ms ease,
-    border-color 150ms ease;
-}
-.link-card-hover:hover {
-  transform: translateY(-2px);
-}
-
-/* Skeleton ko pulse + subtle shimmer dena */
+/* Skeleton pulse */
 @keyframes skeleton-pulse {
   0%,
   100% {
@@ -167,12 +192,11 @@ body {
     opacity: 1;
   }
 }
-
 [data-slot="skeleton"] {
   animation: skeleton-pulse 1.5s ease-in-out infinite;
 }
 
-/* Page content fade-in jab load ho */
+/* Page fade-in */
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -183,20 +207,28 @@ body {
     transform: translateY(0);
   }
 }
-
 .fade-in {
   animation: fade-in 400ms ease-out;
 }
 
-/* Filter tabs ka smooth scale on click */
-.filter-tab {
-  transition: all 150ms ease;
+/* Link card lift on hover */
+.link-card-hover {
+  transition:
+    transform 150ms ease,
+    box-shadow 150ms ease,
+    border-color 150ms ease;
 }
+.link-card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Filter tab click scale */
 .filter-tab:active {
   transform: scale(0.96);
 }
 
-/* Scrollbar ko thora subtle banana */
+/* Subtle branded scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -205,15 +237,23 @@ body {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--border);
+  background: hsl(342, 40%, 75%);
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--muted-foreground);
+  background: hsl(342, 60%, 50%);
 }
 
-/* Avatar circle ko halka gradient dena */
-.avatar-circle {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary) 100%);
-  opacity: 0.08;
+/* Brand gradient utility */
+.bg-brand-gradient {
+  background: linear-gradient(
+    135deg,
+    hsl(338, 84%, 37%) 0%,
+    hsl(342, 60%, 55%) 100%
+  );
+}
+
+/* Brand shadow utility */
+.shadow-brand {
+  box-shadow: var(--shadow-brand);
 }
