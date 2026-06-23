@@ -115,7 +115,7 @@ export function LinkForm({ initialData }: { initialData?: LinkFormData }) {
 
           <div className="space-y-2">
             <Label htmlFor="category">Category</Label>
-            <Select value={category} onValueChange={setCategory}>
+            <Select value={category} onValueChange={(val) => val !== null && setCategory(val)}>
               <SelectTrigger id="category" className="w-full">
                 <SelectValue placeholder="Category select karein" />
               </SelectTrigger>
@@ -130,7 +130,7 @@ export function LinkForm({ initialData }: { initialData?: LinkFormData }) {
           {category === "whatsapp" && (
             <div className="space-y-2">
               <Label htmlFor="status">Group Status</Label>
-              <Select value={status} onValueChange={setStatus}>
+              <Select value={status} onValueChange={(val) => val !== null && setStatus(val)}>
                 <SelectTrigger id="status" className="w-full">
                   <SelectValue placeholder="Status select karein" />
                 </SelectTrigger>

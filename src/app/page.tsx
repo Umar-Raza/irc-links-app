@@ -75,7 +75,7 @@ export default function Home() {
 
         <div className="space-y-3">
           {loading ? (
-            Array.from({ length: 3 }).map((_, i) => (
+            Array.from({ length: 7 }).map((_, i) => (
               <Skeleton key={i} className="h-[72px] w-full rounded-xl" />
             ))
           ) : filteredLinks.length === 0 ? (
